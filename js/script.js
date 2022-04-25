@@ -4,9 +4,9 @@ let mediano = 750;
 let chico = 500;
 let bombones = 800;
 let tortas = 1500;
-let precioBocha = 250;
 let gustos;
 let total;
+const precioBocha = 250;
 const IVA = 1.21;
 const envio = 100;
 
@@ -32,8 +32,8 @@ while (opcion) {
     total = tortas * IVA;
     tortas = alert("El precio total es $" + total);
   } else if (opcion === 6) {
-    total = seleccionBochas * IVA;
-    seleccionBochas = alert("El precio total es $" + total);
+    let cantidadBochas = parseFloat(prompt("Seleccioná la cantidad de bochas que vas a llevar \(Recorda que podes llevar hasta 3\)"));
+    seleccionBochas(cantidadBochas);
   } else if (isNaN(opcion)) {
     alert("Por favor escribí el número de la opción elegida");
   } else if (opcion === 7) {
@@ -42,8 +42,6 @@ while (opcion) {
   }
 }
 
-function seleccionBochas(){
-  let cantBochas;
-  let precioBocha = 250;
-
+function seleccionBochas(cantidadBochas){
+  alert("El precio total es $" + (cantidadBochas * precioBocha)*IVA);
 }
